@@ -287,3 +287,57 @@ h1 em,h2 em {font-weight:400}
  .devis-formula-price {font-size:16px}
  .devis-controls .button {padding:14px}
 }
+
+
+/* Sprint 04 — landing pages événements professionnels et privés */
+.audience-hero {display:grid;grid-template-columns:1fr 1fr;gap:6%;min-height:585px;align-items:center}
+.audience-hero-copy {padding:75px 0}
+.audience-hero h1 {font-size:clamp(63px,6.6vw,100px);line-height:.97;letter-spacing:-.035em;margin:28px 0}
+.audience-hero-copy>p:not(.eyebrow) {font-size:15px;line-height:1.9;max-width:550px}
+.audience-hero-actions {display:flex;align-items:center;gap:25px;flex-wrap:wrap;margin-top:37px}
+.audience-hero-photo {height:560px}
+.audience-section {padding:105px 0;scroll-margin-top:30px}
+.audience-soft {background:#EAECE1}
+.audience-section-header {max-width:760px;margin-bottom:47px}
+.audience-section-header h2 {margin:20px 0}
+.audience-section-header>p:not(.eyebrow) {font-size:14px;line-height:1.85;max-width:650px}
+.audience-situations,.audience-formula-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:27px}
+.audience-situations article {border-top:1px solid rgba(48,61,48,.36);padding:23px 0}
+.audience-situations article>span {font-size:11px;letter-spacing:.1em}
+.audience-situations h3 {font-size:36px;line-height:1.15;margin:25px 0 16px}
+.audience-situations p {font-size:13px;line-height:1.85;max-width:350px}
+.audience-formula {border:1px solid rgba(48,61,48,.26);padding:27px;display:flex;flex-direction:column;align-items:start;min-height:340px}
+.audience-formula h3 {font-size:43px;margin:23px 0 13px}
+.audience-formula p {font-size:13px;line-height:1.8;flex:1}
+.audience-formula>strong {font-family:var(--font-editorial),Georgia,serif;font-size:33px;font-weight:500;margin:16px 0}
+.audience-formula>strong small {font-family:var(--font-interface),Arial,sans-serif;font-weight:400;font-size:11px}
+.audience-footnote {font-size:11px;line-height:1.7;opacity:.65;margin:25px 0 0}
+.audience-duo {display:grid;grid-template-columns:1fr 1fr;gap:12%}
+.audience-duo h2 {margin:20px 0}
+.audience-duo>div:last-child {padding-top:43px}
+.audience-duo>div:last-child>p {font-size:15px;line-height:1.9}
+.audience-benefits {list-style:none;padding:0;margin:30px 0}
+.audience-benefits li {display:flex;gap:14px;align-items:start;margin:15px 0;font-size:13px;line-height:1.6}
+.audience-benefits svg {flex-shrink:0}
+.audience-bottom {background:var(--olive);color:var(--ivory);text-align:center;padding:100px 0}
+.audience-bottom h2 {margin:20px 0}
+.audience-bottom p:not(.eyebrow) {font-size:14px;line-height:1.8;margin-bottom:30px}
+@media(max-width:920px) {
+ .audience-hero {gap:4%}.audience-hero h1 {font-size:clamp(55px,6vw,75px)}.audience-formula {padding:20px}.audience-formula h3 {font-size:34px}
+}
+@media(max-width:760px) {
+ .audience-hero {display:flex;flex-direction:column;align-items:stretch;gap:0}
+ .audience-hero-copy {padding:66px 0 35px}
+ .audience-hero h1 {font-size:clamp(59px,12vw,85px)}
+ .audience-hero-copy>p:not(.eyebrow) {font-size:14px}
+ .audience-hero-photo {height:340px;margin:0 -18px}
+ .audience-section {padding:73px 0}
+ .audience-situations,.audience-formula-grid,.audience-duo {grid-template-columns:1fr;gap:20px}
+ .audience-section-header {margin-bottom:31px}
+ .audience-situations article {padding:16px 0}
+ .audience-situations h3 {font-size:33px;margin:15px 0}
+ .audience-formula {min-height:0;padding:24px}
+ .audience-formula p {flex:unset}
+ .audience-duo>div:last-child {padding-top:0}
+ .audience-bottom {padding:75px 0}
+}

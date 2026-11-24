@@ -20,7 +20,7 @@ export function DevisWizard() {
   const [formula, setFormula] = useState<FormulaId>(initialFormula);
   const [custom, setCustom] = useState<Record<string, string>>({});
   const [guests, setGuests] = useState(50);
-  const [kind, setKind] = useState<EventType>('professionnel');
+  const [kind, setKind] = useState<EventType>(query.get('type') === 'prive' ? 'prive' : 'professionnel');
   const [mode, setMode] = useState<Channel>('livraison');
   const [date, setDate] = useState('');
   const [city, setCity] = useState('');

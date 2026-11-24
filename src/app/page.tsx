@@ -33,7 +33,7 @@ export default function Home() {
 
       <section className="section how-section">
         <div className="container how-grid"><div><p className="eyebrow">COMMENT ÇA MARCHE</p><h2>Recevoir n’a jamais été <em>aussi simple.</em></h2><Link className="text-link" href="/devis">Estimer mon événement <ArrowUpRight size={16}/></Link></div>
-          <ol className="steps"><li><span>01</span><h3>Choisissez votre formule</h3></li><li><span>02</span><h3>Indiquez le nombre de convives</h3></li><li><span>03</span><h3>Demandez votre devis</h3></li></ol>
+          <ol className="steps"><li><span>01</span><h3>Choisissez votre formule</h3></li><li><span>02</span><h3>Personnalisez votre sélection</h3></li><li><span>03</span><h3>Indiquez le nombre de convives</h3></li><li><span>04</span><h3>Recevez votre estimation</h3></li></ol>
         </div>
       </section>
 

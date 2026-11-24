@@ -1,0 +1,117 @@
+@import "tailwindcss";
+:root { --olive:#303D30; --ivory:#F5F2E9; --sage:#A9AD96; --terracotta:#B87554; --ink:#303D30; }
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {margin:0;background:var(--ivory);color:var(--ink);font-family:var(--font-interface),Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a {color:inherit;text-decoration:none}
+button {font:inherit}
+.container {width:min(100% - 64px,1240px);margin-inline:auto}
+.site-header {position:relative;z-index:20;background:var(--ivory);border-bottom:1px solid rgba(48,61,48,.13)}
+.header-inner {height:92px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.brand {display:inline-flex;flex-direction:column;align-items:center;gap:6px;white-space:nowrap}
+.brand-name {font-family:var(--font-editorial),Georgia,serif;font-size:27px;font-weight:500;letter-spacing:.1em;line-height:1}
+.brand-description {font-size:8px;font-weight:600;letter-spacing:.28em}
+.desktop-nav {display:flex;align-items:center;gap:29px;font-size:12px;font-weight:600}
+.desktop-nav>a:not(.button):hover, .text-link:hover {text-decoration:underline;text-underline-offset:5px}
+.button {display:inline-flex;align-items:center;justify-content:center;gap:14px;padding:16px 22px;border:1px solid var(--olive);background:var(--olive);color:var(--ivory);font-size:12px;font-weight:700;letter-spacing:.02em;transition:background .2s,color .2s;cursor:pointer}
+.button:hover {background:#435743}
+.button-small {padding:14px 17px}
+.button-ivory {background:var(--ivory);border-color:var(--ivory);color:var(--olive)}
+.button-ivory:hover {background:white}
+.mobile-toggle,.mobile-nav {display:none}
+.eyebrow {font-size:10px;font-weight:700;letter-spacing:.19em}
+h1,h2,h3,p {margin-top:0}
+h1,h2,h3 {font-family:var(--font-editorial),Georgia,serif;font-weight:500}
+h1 em,h2 em {font-weight:400}
+.hero {display:grid;grid-template-columns:49% 51%;min-height:650px;align-items:stretch}
+.hero-copy {align-self:center;padding:80px 45px 80px 0}
+.hero h1 {font-size:clamp(70px,7.5vw,120px);line-height:.88;letter-spacing:-.046em;margin:38px 0 32px}
+.hero-description {font-size:15px;line-height:1.85;max-width:450px}
+.hero-actions {display:flex;flex-wrap:wrap;align-items:center;gap:26px;margin-top:38px}
+.text-link {display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700}
+.hero-note {font-family:var(--font-editorial),Georgia,serif;font-style:italic;font-size:20px;margin:54px 0 0;opacity:.72}
+.photo {position:relative;overflow:hidden;background:#DCDCCD;min-height:170px}
+.photo>img {display:block;width:100%;height:100%;object-fit:cover}
+.photo-placeholder {position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:23px;background:radial-gradient(ellipse at 74% 25%,#e6e4d5 0,#c8cbb6 54%,#b9c0a5 100%);color:rgba(48,61,48,.7)}
+.placeholder-line {width:64px;height:64px;border:1px solid currentColor;border-radius:50%;opacity:.3;position:relative}
+.placeholder-line::after {content:'';position:absolute;width:92px;height:1px;background:currentColor;transform:rotate(-45deg);left:-14px;top:31px}
+.placeholder-caption {font-size:10px;letter-spacing:.18em;text-align:center;padding:0 12px}
+.hero-photo {height:650px}
+.section {padding:116px 0}
+.section-heading {max-width:680px;margin-bottom:47px}
+.section-heading h2,h2 {font-size:clamp(49px,5vw,76px);line-height:1;letter-spacing:-.025em}
+.section-heading h2 {margin:18px 0 17px}
+.section-heading>p:last-child {font-size:14px;line-height:1.7;opacity:.75}
+.formula-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+.formula-card {display:block;min-width:0}
+.formula-photo {height:350px}
+.formula-title-row {display:flex;align-items:center;justify-content:space-between;margin-top:20px}
+.formula-title-row h3 {font-size:32px;margin:0}
+.formula-card>p {font-size:13px;line-height:1.7;min-height:46px;margin:12px 0 20px}
+.formula-price {font-size:13px;font-weight:700}
+.formula-price small {font-weight:400}
+.pricing-warning {font-size:11px;opacity:.65;margin:24px 0 0}
+.how-section {background:#E9E9DE}
+.how-grid {display:grid;grid-template-columns:1fr 1fr;gap:13%}
+.how-grid h2 {margin:25px 0 35px}
+.steps {list-style:none;padding:0;margin:12px 0 0}
+.steps li {display:flex;align-items:baseline;gap:30px;border-bottom:1px solid rgba(48,61,48,.25);padding:23px 0}
+.steps li span {font-size:12px;letter-spacing:.1em}
+.steps h3 {font-size:31px;margin:0}
+.occasion-grid {display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.occasion-card .photo {height:390px}
+.occasion-copy {padding:25px 0 0}
+.occasion-copy h3 {font-size:36px;margin-bottom:9px}
+.occasion-copy p {max-width:430px;font-size:13px;line-height:1.8;opacity:.8}
+.story-section {background:white}
+.story-grid {display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:9%}
+.story-grid>.photo {height:540px}
+.story-grid h2 {margin:20px 0 30px}
+.story-grid p:not(.eyebrow) {font-size:14px;line-height:1.95;max-width:470px}
+.restaurant-names {display:flex;flex-wrap:wrap;gap:24px;margin:28px 0 38px;font-family:var(--font-editorial),Georgia,serif;font-size:22px;letter-spacing:.04em}
+.final-cta {background:var(--olive);color:var(--ivory);text-align:center;padding:112px 0 122px}
+.final-cta h2 {margin:20px 0 23px}
+.final-cta p:not(.eyebrow) {font-size:14px;opacity:.85;margin-bottom:32px}
+.site-footer {background:#243225;color:var(--ivory);padding:65px 0 20px}
+.footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:80px}
+.brand-light {align-items:flex-start}
+.site-footer p {margin:29px 0 8px;font-size:13px}
+.site-footer small {font-size:11px;opacity:.7}
+.site-footer nav {display:flex;flex-direction:column;gap:14px;font-size:12px}
+.footer-bottom {border-top:1px solid rgba(245,242,233,.2);font-size:11px;opacity:.7;margin-top:60px;padding-top:20px}
+.placeholder-page {min-height:55vh;padding:105px 0}
+.placeholder-page h1 {font-size:clamp(55px,8vw,100px);margin:25px 0}
+.placeholder-page p:not(.eyebrow) {max-width:570px;font-size:16px;line-height:1.8}
+.placeholder-page .button {margin-top:30px}
+:focus-visible {outline:3px solid var(--terracotta);outline-offset:4px}
+@media(max-width:1000px) {
+ .desktop-nav {gap:14px;font-size:11px}
+ .hero {min-height:540px}.hero-photo {height:560px}
+ .hero h1 {font-size:clamp(62px,8vw,94px)}
+ .formula-photo {height:280px}.occasion-card .photo {height:300px}
+}
+@media(max-width:760px) {
+ .container {width:min(100% - 36px,560px)}
+ .header-inner {height:74px}.brand-name {font-size:23px}
+ .desktop-nav {display:none}.mobile-toggle {display:flex;border:0;background:transparent;padding:10px;cursor:pointer}
+ .mobile-nav {display:flex;flex-direction:column;padding:17px 18px 24px;gap:3px;border-top:1px solid rgba(48,61,48,.15);background:var(--ivory)}
+ .mobile-nav>a:not(.button) {padding:12px 0;font-size:14px}.mobile-nav .button {margin-top:10px}
+ .hero {display:flex;flex-direction:column}.hero-copy {padding:72px 0 40px}
+ .hero h1 {font-size:clamp(65px,16vw,98px);margin:27px 0}
+ .hero-description {font-size:14px}
+ .hero-actions {gap:23px;margin-top:27px}
+ .hero-note {margin:30px 0 0}
+ .hero-photo {height:360px;margin:0 -18px;width:calc(100% + 36px)}
+ .section {padding:77px 0}.section-heading {margin-bottom:32px}
+ h2,.section-heading h2 {font-size:clamp(48px,12vw,67px)}
+ .formula-grid,.occasion-grid,.story-grid,.how-grid {grid-template-columns:1fr;gap:35px}
+ .formula-photo {height:340px}.formula-title-row {margin-top:14px}
+ .formula-card>p {min-height:0;margin:8px 0 12px}
+ .formula-card {margin-bottom:10px}.steps li {gap:20px}
+ .occasion-card .photo {height:300px}
+ .story-grid>.photo {height:370px}
+ .final-cta {padding:82px 0 90px}
+ .footer-grid {grid-template-columns:1fr 1fr;gap:44px}
+ .footer-grid>div {grid-column:1/-1}
+}
+@media(prefers-reduced-motion:reduce){html {scroll-behavior:auto} .button {transition:none}}

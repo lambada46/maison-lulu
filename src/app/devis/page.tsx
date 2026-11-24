@@ -1,3 +1,12 @@
-import type { Metadata } from 'next'; import Link from 'next/link';
-export const metadata: Metadata = {title:'Estimer mon événement'};
-export default function Page(){return <section className="container placeholder-page"><p className="eyebrow">VOTRE ÉVÉNEMENT</p><h1>Bien recevoir,<br/><em>ça se prépare.</em></h1><p>Notre outil d’estimation et de demande de devis arrive bientôt. En attendant, découvrez nos formules. Aucun devis ne peut encore être envoyé depuis ce site.</p><Link href="/nos-formules" className="button">Découvrir nos formules</Link></section>}
+import type { Metadata } from 'next';
+import { Suspense } from 'react';
+import { DevisWizard } from '@/components/devis-wizard';
+
+export const metadata: Metadata = {
+  title: 'Estimer mon événement',
+  description: 'Estimez le budget de votre apéritif, cocktail ou buffet à Avignon. Choisissez votre formule, personnalisez-la et demandez un devis Maison Lulu.',
+};
+
+export default function DevisPage() {
+  return <Suspense fallback={<section className="container devis-page"><p>Chargement du simulateur…</p></section>}><DevisWizard /></Suspense>;
+}

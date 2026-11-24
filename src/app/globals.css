@@ -119,3 +119,82 @@ h1 em,h2 em {font-weight:400}
  .footer-grid>div {grid-column:1/-1}
 }
 @media(prefers-reduced-motion:reduce){html {scroll-behavior:auto} .button {transition:none}}
+
+
+/* Sprint 02 — formulaires de sélection et présentation des trois offres */
+.offers-hero {padding:105px 0 91px}
+.offers-hero h1 {font-size:clamp(67px,8vw,116px);line-height:.94;letter-spacing:-.045em;margin:32px 0 28px}
+.offers-hero>p:not(.eyebrow) {font-size:16px;line-height:1.8;max-width:650px;opacity:.85}
+.offers-quicknav {display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:58px}
+.offers-quicknav a {display:flex;align-items:center;gap:13px;border-top:1px solid rgba(48,61,48,.35);padding:19px 3px;font-family:var(--font-editorial),Georgia,serif;font-size:24px}
+.offers-quicknav a>span {font-family:var(--font-interface),Arial,sans-serif;font-size:10px;letter-spacing:.1em;opacity:.7}
+.offers-quicknav svg {margin-left:auto}
+.offer-section {padding:82px 0 120px;border-top:1px solid rgba(48,61,48,.14);scroll-margin-top:20px}
+.offer-section:nth-of-type(odd) {background:#EDEDE3}
+.offer-topline {display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(48,61,48,.3);padding-bottom:16px;margin-bottom:49px;font-size:10px;letter-spacing:.19em;font-weight:700}
+.offer-grid {display:grid;grid-template-columns:1.02fr .98fr;gap:7%;align-items:center}
+.offer-media>.photo {height:550px}
+.offer-media>p {font-size:10px;opacity:.65;margin-top:12px}
+.offer-content h2 {font-size:clamp(66px,7vw,106px);line-height:.98;letter-spacing:-.035em;margin:20px 0 19px}
+.offer-headline {font-family:var(--font-editorial),Georgia,serif;font-size:31px;line-height:1.18;margin-bottom:17px}
+.offer-intro {font-size:13px;line-height:1.95;opacity:.85}
+.offer-facts {margin:28px 0;border-top:1px solid rgba(48,61,48,.2);border-bottom:1px solid rgba(48,61,48,.2);padding:13px 0}
+.offer-facts div {display:grid;grid-template-columns:140px 1fr;gap:16px;padding:11px 0;align-items:start}
+.offer-facts span {font-size:11px;opacity:.7}
+.offer-facts strong {font-size:12px;font-weight:600;line-height:1.55}
+.offer-price {display:flex;flex-direction:column;gap:8px;margin-bottom:25px}
+.offer-price small {font-size:9px;letter-spacing:.15em;font-weight:700}
+.offer-price strong {font-family:var(--font-editorial),Georgia,serif;font-weight:500;font-size:49px}
+.offer-price strong span {font-family:var(--font-interface),Arial,sans-serif;font-size:12px;font-weight:400}
+.offer-details {display:grid;grid-template-columns:1fr 1fr;gap:13%;margin-top:95px;border-top:1px solid rgba(48,61,48,.25);padding-top:63px;scroll-margin-top:20px}
+.offer-menu h3 {font-size:53px;line-height:1.05;margin:15px 0 42px}
+.offer-menu-group {margin-bottom:31px}
+.offer-menu-group h4 {font-family:var(--font-editorial),Georgia,serif;font-size:28px;font-weight:500;margin:0 0 16px}
+.offer-menu-group ul,.offer-selection ul {list-style:none;padding:0;margin:0}
+.offer-menu-group li {display:flex;align-items:baseline;gap:12px;font-size:13px;line-height:1.8;margin:7px 0}
+.offer-menu-group li svg {flex-shrink:0;opacity:.65;position:relative;top:2px}
+.offer-menu-note {font-size:11px;line-height:1.8;opacity:.65;margin-top:30px}
+.offer-customizer {padding:35px 36px;background:var(--ivory);align-self:start}
+.offer-customizer-head h4 {font-family:var(--font-editorial),Georgia,serif;font-size:43px;font-weight:500;line-height:1.05;margin:17px 0}
+.offer-customizer-head>p:not(.eyebrow) {font-size:13px;line-height:1.7;margin-bottom:27px}
+.offer-choice-group {border:0;border-top:1px solid rgba(48,61,48,.2);padding:24px 0 13px;margin:0;min-width:0}
+.offer-choice-group legend {float:left;font-weight:700;font-size:12px;line-height:1.5;width:100%}
+.offer-choice-group>p {clear:both;font-size:11px;opacity:.7;margin:7px 0 16px}
+.offer-choice-pills {display:flex;flex-wrap:wrap;gap:8px}
+.offer-choice-pill {display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(48,61,48,.35);padding:11px 13px;font-size:11px;line-height:1.4;cursor:pointer}
+.offer-choice-pill.is-selected {background:var(--olive);color:var(--ivory);border-color:var(--olive)}
+.offer-choice-pill input {position:absolute;opacity:0;width:1px;height:1px}
+.offer-choice-pill:focus-within {outline:2px solid var(--terracotta);outline-offset:3px}
+.offer-selection {border-top:1px solid rgba(48,61,48,.2);padding:23px 0 15px}
+.offer-selection li {font-size:12px;line-height:1.9}
+.offer-selection li:before {content:'·';padding-right:8px}
+.offer-selection>p:last-child {font-size:10px;line-height:1.7;opacity:.65;margin-top:11px}
+.offer-customizer>.button {width:100%}
+.offer-choice-empty {background:var(--ivory);padding:37px;align-self:start}
+.offer-choice-empty p {font-family:var(--font-editorial),Georgia,serif;font-size:29px;line-height:1.2;margin-bottom:29px}
+.offers-bottom {background:var(--olive);color:var(--ivory);padding:100px 0;text-align:center}
+.offers-bottom h2 {margin:20px 0}
+.offers-bottom p:not(.eyebrow):not(.offer-disclaimer) {font-size:14px;margin-bottom:30px}
+.offers-bottom .offer-disclaimer {font-size:10px;opacity:.68;line-height:1.7;max-width:680px;margin:36px auto 0}
+@media(max-width:900px) {
+ .offer-grid {gap:4%}.offer-media>.photo {height:460px}
+ .offer-details {gap:7%}.offer-customizer {padding:28px 24px}
+}
+@media(max-width:760px) {
+ .offers-hero {padding:71px 0 55px}
+ .offers-hero h1 {font-size:clamp(60px,13vw,86px)}
+ .offers-hero>p:not(.eyebrow) {font-size:14px}
+ .offers-quicknav {grid-template-columns:1fr;gap:0;margin-top:38px}
+ .offers-quicknav a {font-size:22px}
+ .offer-section {padding:55px 0 70px}
+ .offer-topline {margin-bottom:30px;gap:16px;font-size:9px}
+ .offer-grid,.offer-details {grid-template-columns:1fr;gap:28px}
+ .offer-media>.photo {height:330px}
+ .offer-content h2 {font-size:76px}
+ .offer-headline {font-size:28px}
+ .offer-facts div {grid-template-columns:110px 1fr}
+ .offer-details {margin-top:49px;padding-top:43px}
+ .offer-menu h3 {font-size:48px}
+ .offer-customizer {padding:26px 21px}
+ .offers-bottom {padding:75px 0}
+}

@@ -21,7 +21,7 @@ export default function Home() {
         <div className="container">
           <div className="section-heading"><p className="eyebrow">NOS FORMULES</p><h2>À chaque occasion,<br/><em>sa formule.</em></h2><p>Trois façons de recevoir, des formules généreuses et des tarifs clairs.</p></div>
           <div className="formula-grid">
-            {site.formulas.map((formula) => <Link key={formula.slug} className="formula-card" href="/nos-formules">
+            {site.formulas.map((formula) => <Link key={formula.slug} className="formula-card" href={`/nos-formules#${formula.slug}`}>
               <Photo className="formula-photo" name={formula.image} alt={`Présentation de la formule ${formula.title}`} label={formula.title.toUpperCase()}/>
               <div className="formula-title-row"><h3>{formula.title}</h3><ArrowUpRight size={21} /></div>
               <p>{formula.description}</p><span className="formula-price">À partir de {formula.price} € <small>/ personne</small></span>

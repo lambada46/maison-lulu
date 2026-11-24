@@ -341,3 +341,12 @@ h1 em,h2 em {font-weight:400}
  .audience-duo>div:last-child {padding-top:0}
  .audience-bottom {padding:75px 0}
 }
+
+/* Privacy-first optional analytics consent */
+.cookie-banner {position:fixed;z-index:100;bottom:20px;left:20px;right:20px;max-width:850px;margin:auto;background:#fffefa;color:var(--olive);border:1px solid rgba(48,61,48,.3);box-shadow:0 7px 32px rgba(0,0,0,.12);padding:18px 21px;display:flex;gap:22px;align-items:center}
+.cookie-banner p {font-size:12px;line-height:1.7;margin:0;flex:1}
+.cookie-banner p a {text-decoration:underline}
+.cookie-banner>div {display:flex;gap:9px;align-items:center}
+.cookie-banner .button,.cookie-reject {padding:12px 15px;font-size:11px;white-space:nowrap}
+.cookie-reject {background:transparent;border:1px solid var(--olive);cursor:pointer;color:var(--olive)}
+@media(max-width:760px){.cookie-banner {bottom:8px;left:8px;right:8px;flex-direction:column;align-items:stretch;gap:11px}.cookie-banner>div {justify-content:flex-end}}

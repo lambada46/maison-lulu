@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import Link from 'next/link';
 import { site } from '@/config/site';
 import { offers, type FormulaId } from '@/config/offers';
+import { trackFunnel } from '@/lib/analytics';
 
 type Stage = 1 | 2 | 3 | 4;
 type Channel = 'retrait' | 'livraison';
@@ -42,7 +43,13 @@ export function DevisWizard() {
     answer: custom[formula + '-' + i] ?? group.choices[0],
   }));
   const euro = (value: number) => new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(value);
-  const advance = () => { setMessage(''); setStep((current) => Math.min(4, current + 1) as Stage); };
+  const advance = () => {
+    setMessage('');
+    if (step === 1) trackFunnel('formula_selected', { formula });
+    if (step === 2) trackFunnel('personalization_completed', { formula });
+    if (step === 3) trackFunnel('quote_estimate_viewed', { formula, guests, estimated_total: total, event_type: kind });
+    setStep((current) => Math.min(4, current + 1) as Stage);
+  };
   const back = () => { setMessage(''); setStep((current) => Math.max(1, current - 1) as Stage); };
 
   async function submit(event: FormEvent<HTMLFormElement>) {
@@ -64,6 +71,7 @@ export function DevisWizard() {
         const data: { message?: string } = await response.json().catch(() => ({}));
         throw new Error(data.message ?? 'Le service est momentanément indisponible.');
       }
+      trackFunnel('quote_request_sent', { formula, guests, estimated_total: total, event_type: kind });
       setSubmitted(true);
     } catch (error) {
       setMessage(error instanceof Error ? error.message : 'Impossible d’envoyer la demande pour le moment.');
@@ -100,7 +108,7 @@ export function DevisWizard() {
               <p className="devis-help">Choisissez le format qui correspond le mieux à votre réception.</p>
               <div className="devis-formulas">
                 {site.formulas.map((item) => <label className={`devis-formula ${formula === item.slug ? 'selected' : ''}`} key={item.slug}>
-                  <input type="radio" name="formule" checked={formula === item.slug} onChange={() => setFormula(item.slug)} />
+                  <input type="radio" name="formule" checked={formula === item.slug} onChange={() => { setFormula(item.slug); trackFunnel('formula_selected', { formula: item.slug }); }} />
                   <span className="devis-formula-text"><strong>{item.title}</strong><small>{item.description}</small></span>
                   <span className="devis-formula-price">{item.price} €<small>/ pers.</small></span>
                 </label>)}
